@@ -1,0 +1,29 @@
+<html>
+	<head>
+		<title>Idea Leaderboard</title>
+		<link rel="stylesheet" type="text/css" href="/media/style.css" />
+	</head>
+
+	<body>
+		<div class='navbar'>
+			<a href='/battle/' class='nav'>VOTE</a>
+			<a href='/addidea/' class='nav'>NEW IDEA</a>
+			<a href='/leaderboard/' class='nav'>LEADERBOARD</a>
+		</div>
+		<div class='wrapper'>
+			<h1 class='header'>Leaderboard</h1>
+			<hr />
+			{% for i in c %}
+			<div style='overflow:auto;'>
+				<div id='idea2' class='idea'>{{i.idea}}</div>
+				<h1 class='rating'>SCORE {{ i.rating }}</h1> 
+				
+			</div>
+			<hr />
+			{% endfor %}
+		</div>
+		<div id='footer'>
+			Created By <a href='mailto:pheartheceal@gmail.com'>Phear The Ceal</a> (2012)
+		</div>
+	</body>
+</html>

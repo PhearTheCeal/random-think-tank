@@ -1,0 +1,25 @@
+<html>
+	<head>
+		<title>Add New Idea</title>
+		<link rel="stylesheet" type="text/css" href="/media/style.css" />
+	</head>
+
+	<body>
+		<div class='navbar'>
+			<a href='/battle/' class='nav'>VOTE</a>
+			<a href='/addidea/' class='nav'>NEW IDEA</a>
+			<a href='/leaderboard/' class='nav'>LEADERBOARD</a>
+		</div>
+		<div class='wrapper'>
+		<h1 class='header'>Add Idea</h1>
+		<h3 style='color:{{color}};text-align:center;background-color:#BDC7DC;'>{{status}}</h3>
+			<form style='display:block;margin-left:auto;margin-right:auto;width:34%;' action='/add/' method='POST'> {% csrf_token %}
+				<textarea class='idea' name='idea' placeholder='New Idea...(140 char limit)' style='width:438px;height:236px;'></textarea><br />
+				<input class='button' style='float:right;' type='submit' value='Submit New Idea' />
+			</form>
+		</div>
+		<div id='footer'>
+			Created By <a href='mailto:pheartheceal@gmail.com'>Phear The Ceal</a> (2012)
+		</div>
+	</body>
+</html>

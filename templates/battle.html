@@ -1,0 +1,35 @@
+<html>
+	<head>
+		<title>Vote On Ideas!</title>
+		<link rel="stylesheet" type="text/css" href="/media/style.css" />
+	</head>
+
+	<body>
+		<div class='navbar'>
+			<a href='/battle/' class='nav'>VOTE</a>
+			<a href='/addidea/' class='nav'>NEW IDEA</a>
+			<a href='/leaderboard/' class='nav'>LEADERBOARD</a>
+		</div>
+		<div class='wrapper'>
+			<h1 class='header'>Which idea is better?</h1>
+			<div style='color:white;text-align:center;'>Users Online: {{users}}</div>
+			<form action='/vote/' method='POST' id='onewins'> {% csrf_token %}
+				<input type='hidden' name='winner' value='{{id1}}' />
+				<input type='hidden' name='loser' value='{{id2}}' />
+			</form>
+			<a href='javascript:void(0);' style='text-decoration:none;' onclick='document.forms.onewins.submit();'>
+				<pre class='idea' id='idea1'>{{idea1}}</pre>
+			</a>
+			<form action='/vote/' method='POST' id='twowins'> {% csrf_token %}
+				<input type='hidden' name='winner' value='{{id2}}' />
+				<input type='hidden' name='loser' value='{{id1}}' />
+			</form>
+			<a href='javascript:void(0);' style='text-decoration:none;' onclick='document.forms.twowins.submit();'>
+				<pre class='idea' id='idea2'>{{idea2}}</pre>
+			</a>
+		</div>
+		<div id='footer'>
+			Created By <a href='mailto:pheartheceal@gmail.com'>Phear The Ceal</a> (2012)
+		</div>
+	</body>
+</html>
